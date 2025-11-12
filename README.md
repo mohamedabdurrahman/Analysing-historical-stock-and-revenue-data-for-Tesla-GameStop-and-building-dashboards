@@ -33,10 +33,10 @@ Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dash
 ├── README.md
 ├── Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dashboards.ipynb
 ├── plots/
-│   ├── tesla_historical_share_price.pdf
-│   ├── tesla_revenue.pdf
-│   ├── gamestop_historical_share_price.pdf
-│   └── gamestop_revenue.pdf
+│   ├── tesla_historical_share_price.png
+│   ├── tesla_revenue.png
+│   ├── gamestop_historical_share_price.png
+│   └── gamestop_revenue.png
 
 ---
 
