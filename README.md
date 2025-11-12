@@ -51,18 +51,18 @@ Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dash
 # Analysing historical stock and revenue data for Tesla & GameStop and building dashboards Project
 
 
-# -----------------------------
-# 1. Import libraries
-# -----------------------------
+ -----------------------------
+ Import libraries
+ -----------------------------
 import pandas as pd
 import yfinance as yf
 import requests
 from bs4 import BeautifulSoup
 !pip install --upgrade plotly
 
-# -----------------------------
-# Extracting Tesla Stock Data Using yfinance
-# -----------------------------
+ -----------------------------
+ Extracting Tesla Stock Data Using yfinance
+ -----------------------------
 import yfinance as yf
 
 tesla = yf.Ticker("TSLA")
@@ -70,28 +70,28 @@ tesla_data = tesla.history(period="max")
 tesla_data.reset_index(inplace=True)
 tesla_data.head()
 
-# -----------------------------
-# Extracting Tesla Revenue Data Using Webscraping
-# -----------------------------
+ -----------------------------
+ Extracting Tesla Revenue Data Using Webscraping
+ -----------------------------
      
     import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-# Load the webpage
+ Load the webpage
 url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/revenue.htm"
 html_data = requests.get(url).text
 
-# Parse the HTML
+ Parse the HTML
 soup = BeautifulSoup(data, "html.parser")
 
-# Locate the Tesla quarterly revenue table (second tbody on the page)
+ Locate the Tesla quarterly revenue table (second tbody on the page)
 table = soup.find_all("tbody")[1]
 
-# Create an empty DataFrame
+ Create an empty DataFrame
 tesla_revenue = pd.DataFrame(columns=["Date", "Revenue"])
 
-# Loop through all rows in the table
+ Loop through all rows in the table
 for row in table.find_all("tr"):
     cols = row.find_all("td")
     if len(cols) == 2:
@@ -102,18 +102,18 @@ for row in table.find_all("tr"):
             pd.DataFrame({"Date": [date], "Revenue": [revenue]})
         ], ignore_index=True)
 
-# Clean up the revenue column
+ Clean up the revenue column
 tesla_revenue["Revenue"] = tesla_revenue["Revenue"].str.replace(',|\$', '', regex=True)
 tesla_revenue.dropna(inplace=True)
 tesla_revenue = tesla_revenue[tesla_revenue["Revenue"] != ""]
 
-# Display the last 5 rows
+ Display the last 5 rows
 tesla_revenue.tail()
 
     
-# -----------------------------
-# Extracting GameStop Stock Data Using yfinance
-# -----------------------------
+ -----------------------------
+ Extracting GameStop Stock Data Using yfinance
+ -----------------------------
 
 import yfinance as yf
 
@@ -122,28 +122,28 @@ gme_data = gamestop.history(period="max")
 gme_data.reset_index(inplace=True)
 gme_data.head()
 
-# -----------------------------
-# Extracting GameStop Revenue Data Using Webscraping
-# -----------------------------
+ -----------------------------
+ Extracting GameStop Revenue Data Using Webscraping
+ -----------------------------
  import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-# Load the webpage
+ Load the webpage
 url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/stock.html"
 html_data_2 = requests.get(url).text
 
-# Parse the HTML
+ Parse the HTML
 soup = BeautifulSoup(data, "html.parser")
 
-# Locate the GME quarterly revenue table (second tbody on the page)
+ Locate the GME quarterly revenue table (second tbody on the page)
 tbodies = soup.find_all("tbody")
 GamesStop_quarterly_table = tbodies[1]
 
-# Create an empty DataFrame
+ Create an empty DataFrame
 gme_revenue = pd.DataFrame(columns=["Date", "Revenue"])
 
-# Loop through all rows in the table
+ Loop through all rows in the table
 for row in table.find_all("tr"):
     cols = row.find_all("td")
     if len(cols) == 2:
@@ -154,24 +154,30 @@ for row in table.find_all("tr"):
             pd.DataFrame({"Date": [date], "Revenue": [revenue]})
         ], ignore_index=True)
 
-# Clean up the revenue column
+ Clean up the revenue column
 gme_revenue["Revenue"] = gme_revenue["Revenue"].str.replace(',|\$', '', regex=True)
 gme_revenue.dropna(inplace=True)
 gme_revenue = gme_revenue[gme_revenue["Revenue"] != ""]
 
-# Display the last 5 rows
+ Display the last 5 rows
 gme_revenue.tail()
 
-# -----------------------------
-# Tesla Stock and Revenue Dashboard
-# -----------------------------
+ -----------------------------
+ Tesla Stock and Revenue Dashboard
+ -----------------------------
 make_graph(tesla_data, tesla_revenue, 'Tesla')
 
-# -----------------------------
-# GameStop Stock and Revenue Dashboard
-# -----------------------------
+ -----------------------------
+ GameStop Stock and Revenue Dashboard
+ -----------------------------
 make_graph(gme_data, gme_revenue, 'GameStop')
 
+
+# Dashboards Preview
+<img width="517" height="328" alt="Q5" src="https://github.com/user-attachments/assets/2b8a84e5-e472-4715-a62e-92c680ff5508" />
+<img width="551" height="331" alt="Q5 1" src="https://github.com/user-attachments/assets/e6157567-d4fa-4dbf-96e4-acf9ad554cd1" />
+<img width="555" height="337" alt="Q6" src="https://github.com/user-attachments/assets/25ebe50f-499f-42cf-a8bf-b0a978c461b1" />
+<img width="565" height="319" alt="Q6 1" src="https://github.com/user-attachments/assets/0b4d01b3-784b-4157-aec4-c381550158cf" />
 
 
 
