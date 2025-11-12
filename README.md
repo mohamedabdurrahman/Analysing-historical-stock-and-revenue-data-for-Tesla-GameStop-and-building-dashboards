@@ -1,9 +1,17 @@
 # Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dashboards
 Analysing historical stock and revenue data for Tesla &amp; GameStop and building dashboards
 
-Project Overview
+## Project Overview
 
-This project focuses on analyzing historical stock prices and quarterly revenue data for Tesla (TSLA) and GameStop (GME). We extract stock data using Yahoo Finance and revenue data using web scraping. Finally, we visualize trends and create dashboard-ready plots.
+This project focuses on analyzing historical stock prices and quarterly revenue data for Tesla (TSLA) and GameStop (GME). The goal is to extract, clean, and visualize financial data using both API-based data extraction (yfinance) and web scraping (BeautifulSoup) techniques.
+
+By presenting this data in graphical form, we enable deeper insights into how each company’s stock performance aligns with its quarterly revenue trends.
+
+Extracting and visualizing essential data is a critical aspect of data science and financial analytics. It allows analysts, investors, and decision-makers to interpret historical patterns, forecast potential trends, and make data-driven decisions with confidence.
+
+In this project, we perform a full end-to-end data analysis pipeline — from data extraction to visualization — showcasing how Python can automate the retrieval and interpretation of key financial indicators.
+
+---
 
 ### Key Objectives
 
@@ -16,6 +24,27 @@ This project focuses on analyzing historical stock prices and quarterly revenue 
 
 ---
 
+# Project Highlights
+
+1. Combines API-based extraction (yfinance) and web scraping (BeautifulSoup).
+2. Demonstrates data cleaning and transformation using pandas.
+3. Produces dashboard-ready visualizations for financial analysis.
+4. Encourages reproducible data science workflows and clean notebook structuring.
+5. Provides insight into the relationship between stock trends and company revenue.
+
+---
+
+# Tools and Libraries Used**
+**Tool	**                        Purpose**
+Python	                          Core programming language
+Pandas	                          Data manipulation and cleaning
+plotly     	                      Data visualization
+yfinance	                        Stock data extraction
+Requests	                        Web page downloading
+BeautifulSoup	                    HTML parsing and data extraction
+
+---
+
 ## Data Sources
 
 - **Yahoo Finance** for historical stock prices.
@@ -24,7 +53,6 @@ This project focuses on analyzing historical stock prices and quarterly revenue 
   - GameStop: [link](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/stock.html)
 
 ---
-
 
 ## Project Structure
 
@@ -178,6 +206,8 @@ make_graph(gme_data, gme_revenue, 'GameStop')
 <img width="551" height="331" alt="Q5 1" src="https://github.com/user-attachments/assets/e6157567-d4fa-4dbf-96e4-acf9ad554cd1" />
 <img width="555" height="337" alt="Q6" src="https://github.com/user-attachments/assets/25ebe50f-499f-42cf-a8bf-b0a978c461b1" />
 <img width="565" height="319" alt="Q6 1" src="https://github.com/user-attachments/assets/0b4d01b3-784b-4157-aec4-c381550158cf" />
+
+
 
 
 
