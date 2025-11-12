@@ -25,6 +25,21 @@ This project focuses on analyzing historical stock prices and quarterly revenue 
 
 ---
 
+
+## Project Structure
+
+Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dashboards-project
+│
+├── README.md
+├── Analysing-historical-stock-and-revenue-data-for-Tesla-GameStop-and-building-dashboards.ipynb
+├── plots/
+│   ├── tesla_historical_share_price.pdf
+│   ├── tesla_revenue.pdf
+│   ├── gamestop_historical_share_price.pdf
+│   └── gamestop_revenue.pdf
+
+---
+
 ## Project Files
 
 - `Analysing historical stock and revenue data for Tesla & GameStop and building dashboards.ipynb` – Notebook with all analysis, visualizations, and dashboards.
